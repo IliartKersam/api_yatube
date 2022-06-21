@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import TemplateView
+from datetime import timedelta
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -11,3 +12,8 @@ urlpatterns = [
         name='redoc'
     ),
 ]
+SIMPLE_JWT = {
+    # Устанавливаем срок жизни токена
+   'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
+   'AUTH_HEADER_TYPES': ('Bearer',),
+}
