@@ -11,8 +11,12 @@ v1_router.register('posts/(?P<post_id>\\d+)/comments', CommentViewSet,
 v1_router.register('groups', GroupViewSet, basename='groups')
 v1_router.register('follow', FollowViewSet, basename='follow')
 
+jwtpatterns = [
+    path(r'', include('djoser.urls')),
+    path(r'', include('djoser.urls.jwt')),
+]
+
 urlpatterns = [
-    path('v1/', include('djoser.urls')),
-    path('v1/', include('djoser.urls.jwt')),
-    path('v1/', include(v1_router.urls)),
+    path(r'v1/', include(jwtpatterns)),
+    path(r'v1/', include(v1_router.urls)),
 ]
