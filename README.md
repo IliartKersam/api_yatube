@@ -38,13 +38,13 @@ pip install -r requirements.txt
 Выполнить миграции:
 
 ```
-python3 manage.py migrate
+python manage.py migrate
 ```
 
 Запустить проект:
 
 ```
-python3 manage.py runserver
+python manage.py runserver
 ```
 ### Примеры
 Документация для API Yatube доступна по ссылке: http://127.0.0.1:8000/redoc/
