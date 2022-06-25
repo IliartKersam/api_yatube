@@ -15,13 +15,6 @@ from .serializers import (
 User = get_user_model()
 
 
-class CreateRetrieveViewSet(
-    mixins.CreateModelMixin, mixins.RetrieveModelMixin,
-    mixins.ListModelMixin, viewsets.GenericViewSet
-):
-    pass
-
-
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
@@ -50,7 +43,10 @@ class CommentViewSet(viewsets.ModelViewSet):
         serializer.save(author=self.request.user, post=post)
 
 
-class FollowViewSet(CreateRetrieveViewSet):
+class FollowViewSet(
+    mixins.CreateModelMixin, mixins.RetrieveModelMixin,
+    mixins.ListModelMixin, viewsets.GenericViewSet
+):
     queryset = Follow.objects.all()
     serializer_class = FollowSerializer
     permission_classes = (IsAuthenticated,)
