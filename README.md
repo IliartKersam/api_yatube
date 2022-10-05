@@ -8,7 +8,7 @@ API for social network, write posts, attach pictures, leave comments, subscribe 
 - Django REST framework
 
 ### How to start the project:
-Clone the repository and change into it on the command line:
+Clone repository and go to it's derictory on your computer:
 
 ```
 git clone https://github.com/IliartKersam/api_final_yatube.git
@@ -38,7 +38,10 @@ python3 -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Make migrations:
+Change directory and make migrations:
+```
+cd yatube_api
+```
 
 ```
 python manage.py migrate
