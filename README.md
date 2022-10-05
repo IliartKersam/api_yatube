@@ -1,7 +1,7 @@
 # Yatube project API
 
 ### Description:
-Social network, write posts, attach pictures, leave comments, subscribe to any authors!
+API for social network, write posts, attach pictures, leave comments, subscribe to any authors.
 ### Technologies
 - Python 3.7
 - Django 2.2.19
